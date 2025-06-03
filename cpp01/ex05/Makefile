@@ -4,19 +4,20 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 RM = rm -f
 
-NAME = megaphone
+NAME = harl
 
-SRCS = megaphone.cpp
+SRCS =	Harl.cpp \
+		main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)
 	$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.c
-	$(CC) $(CPPFLAGS) -c $< -o $@
-
 all: $(NAME)
+
+%.o: %.cpp
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
