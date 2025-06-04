@@ -71,7 +71,7 @@ Fixed Fixed::operator/(const Fixed &src)
         std::cout << "Error : division by zero." << std::endl;
         return -1;
     }
-    this->_nb = this->_nb / (src._nb / (1 << _number_of_bits));
+    this->_nb = this->_nb * (1 << _number_of_bits) / src._nb;
     return *this;
 }
 
