@@ -31,8 +31,13 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &src)
 
 void ScavTrap::attack(const std::string& target)
 {
-    std::cout << "ScavTrap " << this->_name << " attacks " << target \
-    << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
+    if (this->_energy_points > 0)
+    {
+        std::cout << "ScavTrap " << this->_name << " attacks " << target \
+        << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
+    }
+    else
+        std::cout << "You have no energy point..." << std::endl;
     this->_energy_points--;
 }
 
@@ -44,8 +49,12 @@ void ScavTrap::takeDamage(unsigned int amount)
 
 void ScavTrap::beRepaired(unsigned int amount)
 {
-    std::cout << this->_name << " gained " << amount << " hit points!" << std::endl;
-    this->_hit_points += amount;
+    if (this->_energy_points > 0)
+    {
+        std::cout << this->_name << " gained " << amount << " hit points!" << std::endl;
+        this->_hit_points += amount;
+    }
+    else
+        std::cout << "You have no energy point..." << std::endl;
     this->_energy_points--;
-    std::cout << "Energy points = " << this->_energy_points << std::endl;
 }
