@@ -6,18 +6,19 @@ ScavTrap::ScavTrap(std::string name)
     this->_hit_points = 100;
     this->_energy_points = 50;
     this->_attack_damage = 20;
-    std::cout << "Default constructor" << std::endl;
+    //std::cout << "Default constructor" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &src)
 {
     this->operator=(src);
-    std::cout << "Copy constructor" << std::endl;
+    //std::cout << "Copy constructor" << std::endl;
 }
 
 ScavTrap::~ScavTrap(void)
 {
-    std::cout << "Destructor" << std::endl;
+    //std::cout << "Destructor" << std::endl;
+    return;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &src)
@@ -57,4 +58,9 @@ void ScavTrap::beRepaired(unsigned int amount)
     else
         std::cout << "You have no energy point..." << std::endl;
     this->_energy_points--;
+}
+
+void ScavTrap::guardGate(void)
+{
+    std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode." << std::endl;
 }

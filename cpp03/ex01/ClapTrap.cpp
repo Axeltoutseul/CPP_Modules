@@ -6,18 +6,19 @@ ClapTrap::ClapTrap(std::string name)
     this->_hit_points = 10;
     this->_energy_points = 10;
     this->_attack_damage = 0;
-    std::cout << "Default constructor" << std::endl;
+    //std::cout << "Default constructor" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src)
 {
     this->operator=(src);
-    std::cout << "Copy constructor" << std::endl;
+    //std::cout << "Copy constructor" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-    std::cout << "Destructor" << std::endl;
+    //std::cout << "Destructor" << std::endl;
+    return;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &src)
