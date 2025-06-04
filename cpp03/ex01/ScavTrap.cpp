@@ -1,26 +1,26 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name)
+ScavTrap::ScavTrap(std::string name)
 {
     this->_name = name;
-    this->_hit_points = 10;
-    this->_energy_points = 10;
-    this->_attack_damage = 0;
+    this->_hit_points = 100;
+    this->_energy_points = 50;
+    this->_attack_damage = 20;
     std::cout << "Default constructor" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &src)
+ScavTrap::ScavTrap(const ScavTrap &src)
 {
     this->operator=(src);
     std::cout << "Copy constructor" << std::endl;
 }
 
-ClapTrap::~ClapTrap(void)
+ScavTrap::~ScavTrap(void)
 {
     std::cout << "Destructor" << std::endl;
 }
 
-ClapTrap &ClapTrap::operator=(const ClapTrap &src)
+ScavTrap &ScavTrap::operator=(const ScavTrap &src)
 {
     this->_name = src._name;
     this->_hit_points = src._hit_points;
@@ -29,22 +29,23 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &src)
     return *this;
 }
 
-void ClapTrap::attack(const std::string& target)
+void ScavTrap::attack(const std::string& target)
 {
-    std::cout << "ClapTrap " << this->_name << " attacks " << target \
+    std::cout << "ScavTrap " << this->_name << " attacks " << target \
     << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
     this->_energy_points--;
 }
 
-void ClapTrap::takeDamage(unsigned int amount)
+void ScavTrap::takeDamage(unsigned int amount)
 {
     std::cout << this->_name << " lost " << amount << " hit points!" << std::endl;
     this->_hit_points -= amount;
 }
 
-void ClapTrap::beRepaired(unsigned int amount)
+void ScavTrap::beRepaired(unsigned int amount)
 {
     std::cout << this->_name << " gained " << amount << " hit points!" << std::endl;
     this->_hit_points += amount;
     this->_energy_points--;
+    std::cout << "Energy points = " << this->_energy_points << std::endl;
 }
