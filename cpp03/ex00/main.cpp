@@ -1,10 +1,24 @@
 #include "ClapTrap.hpp"
 
+/*int main(void)
+{
+    ClapTrap a("Klap");
+    a.attack("Human");
+    a.takeDamage(8);
+    a.beRepaired(3);
+    return 0;
+}*/
+
 int main(void)
 {
     ClapTrap a("Klap");
-    a.attack("Foo");
-    a.takeDamage(2);
+    ClapTrap b;
+    ClapTrap c = b;
+    a.attack("Human");
+    b.attack("Human");
+    a.takeDamage(11);
+    b.takeDamage(5);
     a.beRepaired(3);
+    b.beRepaired(2);
     return 0;
 }

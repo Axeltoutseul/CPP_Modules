@@ -4,9 +4,10 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 RM = rm -f
 
-NAME = ScavTrap
+NAME = FragTrap
 
 SRCS =	ClapTrap.cpp \
+		FragTrap.cpp \
 		main.cpp \
 		ScavTrap.cpp
 

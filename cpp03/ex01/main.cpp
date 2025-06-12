@@ -3,10 +3,26 @@
 
 int main(void)
 {
-    ScavTrap a("Scav");
-    a.attack("Foo");
-    a.takeDamage(2);
+    ScavTrap a("Scavy");
+    a.attack("WAFHWRGH");
+    a.takeDamage(20);
     a.beRepaired(3);
     a.guardGate();
     return 0;
 }
+
+/*int main(void)
+{
+    ScavTrap a;
+    ScavTrap b("Scavy");
+    ScavTrap c(b);
+    a.attack("WAFHWRGH");
+    b.attack("WAFHWRGH");
+    a.takeDamage(104);
+    b.takeDamage(99);
+    a.beRepaired(10);
+    b.beRepaired(10);
+    a.guardGate();
+    b.guardGate();
+    return 0;
+}*/

@@ -3,18 +3,18 @@
 ClapTrap::ClapTrap(void)
 {
     this->_name = "Foo";
-    this->_hit_points = 10;
-    this->_energy_points = 10;
-    this->_attack_damage = 0;
+    this->_hit_points = 100;
+    this->_energy_points = 100;
+    this->_attack_damage = 30;
     std::cout << "ClapTrap: Default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
 {
     this->_name = name;
-    this->_hit_points = 10;
-    this->_energy_points = 10;
-    this->_attack_damage = 0;
+    this->_hit_points = 100;
+    this->_energy_points = 100;
+    this->_attack_damage = 30;
     std::cout << "ClapTrap: Default constructor with name called" << std::endl;
 }
 
@@ -39,7 +39,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &src)
         this->_energy_points = src._energy_points;
         this->_attack_damage = src._attack_damage;
     }
-    std::cout << "ClapTrap: Assignation operator overloading called" << std::endl;
+    std::cout << "ClapTrap: Assignation overloading called" << std::endl;
     return *this;
 }
 
