@@ -54,7 +54,7 @@ void FragTrap::attack(const std::string& target)
 void FragTrap::highFivesGuys(void)
 {
     if (this->_hit_points <= 0)
-        std::cout << "A FragTrap can't ask a high five cause he's already dead..." << std::endl;
+        std::cout << this->_name << " can't ask a high five cause he's already dead..." << std::endl;
     else
         std::cout << "High five 🙏" << std::endl;
 }

@@ -1,15 +1,15 @@
 #include "ClapTrap.hpp"
 
-/*int main(void)
+int main(void)
 {
     ClapTrap a("Klap");
     a.attack("Human");
     a.takeDamage(8);
     a.beRepaired(3);
     return 0;
-}*/
+}
 
-int main(void)
+/*int main(void)
 {
     ClapTrap a("Klap");
     ClapTrap b;
@@ -21,4 +21,4 @@ int main(void)
     a.beRepaired(3);
     b.beRepaired(2);
     return 0;
-}
+}*/
