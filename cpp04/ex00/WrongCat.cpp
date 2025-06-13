@@ -22,3 +22,8 @@ WrongCat &WrongCat::operator=(const WrongCat &src)
         this->type = src.type;
     return *this;
 }
+
+void WrongCat::makeSound(void) const
+{
+    std::cout << "Miaou" << std::endl;
+}

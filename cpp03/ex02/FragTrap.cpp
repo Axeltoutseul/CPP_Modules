@@ -2,11 +2,17 @@
 
 FragTrap::FragTrap(void): ClapTrap()
 {
+    this->_hit_points = 100;
+    this->_energy_points = 100;
+    this->_attack_damage = 30;
     std::cout << "FragTrap: We're inside the default constructor." << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
+    this->_hit_points = 100;
+    this->_energy_points = 100;
+    this->_attack_damage = 30;
     std::cout << "FragTrap: We're inside the default constructor with name." << std::endl;
 }
 

@@ -3,16 +3,22 @@
 ScavTrap::ScavTrap(void): ClapTrap()
 {
     this->_gate_keeper_mode = false;
+    this->_hit_points = 100;
+    this->_energy_points = 50;
+    this->_attack_damage = 20;
     std::cout << "ScavTrap: This is the default constructor" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
     this->_gate_keeper_mode = false;
+    this->_hit_points = 100;
+    this->_energy_points = 50;
+    this->_attack_damage = 20;
     std::cout << "ScavTrap: This is the default constructor with name" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &src)
+ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
 {
     std::cout << "ScavTrap: This is the copy constructor" << std::endl;
     this->operator=(src);
