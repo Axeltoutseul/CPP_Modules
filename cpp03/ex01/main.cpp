@@ -16,12 +16,16 @@ int main(void)
     ScavTrap a;
     ScavTrap b("Scavy");
     ScavTrap c(b);
+    std::cout << std::endl;
     a.attack("WAFHWRGH");
     b.attack("WAFHWRGH");
+    std::cout << std::endl;
     a.takeDamage(104);
     b.takeDamage(99);
+    std::cout << std::endl;
     a.beRepaired(10);
     b.beRepaired(10);
+    std::cout << std::endl;
     a.guardGate();
     b.guardGate();
     return 0;

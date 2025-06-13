@@ -14,10 +14,13 @@ int main(void)
     ClapTrap a("Klap");
     ClapTrap b;
     ClapTrap c = b;
+    std::cout << std::endl;
     a.attack("Human");
     b.attack("Human");
+    std::cout << std::endl;
     a.takeDamage(11);
     b.takeDamage(5);
+    std::cout << std::endl;
     a.beRepaired(3);
     b.beRepaired(2);
     return 0;

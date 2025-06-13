@@ -10,7 +10,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
     std::cout << "FragTrap: We're inside the default constructor with name." << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &src)
+FragTrap::FragTrap(const FragTrap &src) : ClapTrap(src)
 {
     std::cout << "FragTrap: We're inside the copy constructor." << std::endl;
     this->operator=(src);
