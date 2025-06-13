@@ -10,14 +10,14 @@ class Fixed {
     Fixed(const Fixed &src);
     ~Fixed(void);
     Fixed &operator=(const Fixed &src);
-    int getRawBits(void);
+    int getRawBits(void) const;
     void setRawBits(int const raw);
 
 
     private:
 
-    int fixed_int;
-    static const int nb_of_bits = 8;
+    int _nb;
+    static const int _number_of_bits = 8;
 };
 
 #endif

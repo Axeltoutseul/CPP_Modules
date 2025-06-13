@@ -7,6 +7,7 @@ RM = rm -f
 NAME = Animals
 
 SRCS =	Animal.cpp \
+		Brain.cpp \
 		Cat.cpp \
 		Dog.cpp \
 		main.cpp \

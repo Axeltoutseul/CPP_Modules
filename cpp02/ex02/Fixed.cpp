@@ -8,20 +8,19 @@ Fixed::Fixed(void)
 
 Fixed::Fixed(const Fixed &src)
 {
-    this->_nb = src._nb;
     this->operator=(src);
     return;
 }
 
 Fixed::Fixed(const int nb)
 {
-    this->_nb = nb << this->_number_of_bits;
+    this->setRawBits(nb << this->_number_of_bits);
     return;
 }
 
 Fixed::Fixed(const float fixed_float)
 {
-    this->_nb = roundf(fixed_float * (1 << _number_of_bits));
+    this->setRawBits(roundf(fixed_float * (1 << _number_of_bits)));
     return;
 }
 
@@ -42,8 +41,18 @@ float Fixed::toFloat(void) const
 
 Fixed &Fixed::operator=(const Fixed &src)
 {
-    this->_nb = src._nb;
+    this->_nb = src.getRawBits();
     return *this;
+}
+
+int Fixed::getRawBits(void) const
+{
+    return this->_nb;
+}
+
+void Fixed::setRawBits(int const raw)
+{
+    this->_nb = raw;
 }
 
 Fixed Fixed::operator+(const Fixed &src)
