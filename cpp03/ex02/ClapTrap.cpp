@@ -75,7 +75,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 void ClapTrap::beRepaired(unsigned int amount)
 {
     if (this->_hit_points <= 0)
-        std::cout << this->_name << " can't gain HP cause is dead..." << std::endl;
+        std::cout << this->_name << " can't gain HP cause he's dead..." << std::endl;
     else
     {
         if (this->_energy_points > 0)
