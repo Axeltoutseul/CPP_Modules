@@ -1,4 +1,3 @@
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 int main(void)
@@ -30,5 +29,6 @@ int main(void)
     std::cout << std::endl;
     a.guardGate();
     b.guardGate();
+    delete d;
     return 0;
 }*/
