@@ -16,9 +16,11 @@ int main(void)
     ScavTrap a;
     ScavTrap b("Scavy");
     ScavTrap c(b);
+    ClapTrap *d = new ScavTrap("Wut");
     std::cout << std::endl;
-    a.attack("WAFHWRGH");
-    b.attack("WAFHWRGH");
+    a.attack("Enemy");
+    b.attack("Enemy");
+    d->attack("Another enemy");
     std::cout << std::endl;
     a.takeDamage(104);
     b.takeDamage(99);

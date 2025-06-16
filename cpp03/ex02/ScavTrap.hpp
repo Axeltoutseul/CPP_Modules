@@ -19,7 +19,7 @@ class ScavTrap : public ClapTrap {
 
     private:
 
-    bool _gate_keeper_mode;
+    bool _is_guard_gate;
 };
 
 #endif

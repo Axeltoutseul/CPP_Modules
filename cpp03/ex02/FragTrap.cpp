@@ -37,7 +37,7 @@ FragTrap &FragTrap::operator=(const FragTrap &src)
         this->_energy_points = src._energy_points;
         this->_attack_damage = src._attack_damage;
     }
-    std::cout << "FragTrap: We're inside the assignation operator overloading" << std::endl;
+    std::cout << "FragTrap: We're inside the Assignment operator overloading" << std::endl;
     return *this;
 }
 

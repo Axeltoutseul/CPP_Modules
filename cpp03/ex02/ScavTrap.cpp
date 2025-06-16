@@ -2,7 +2,7 @@
 
 ScavTrap::ScavTrap(void): ClapTrap()
 {
-    this->_gate_keeper_mode = false;
+    this->_is_guard_gate = false;
     this->_hit_points = 100;
     this->_energy_points = 50;
     this->_attack_damage = 20;
@@ -11,7 +11,7 @@ ScavTrap::ScavTrap(void): ClapTrap()
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    this->_gate_keeper_mode = false;
+    this->_is_guard_gate = false;
     this->_hit_points = 100;
     this->_energy_points = 50;
     this->_attack_damage = 20;
@@ -32,15 +32,12 @@ ScavTrap::~ScavTrap(void)
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &src)
 {
-    if (this != &src)
-    {
-        this->_name = src._name;
-        this->_hit_points = src._hit_points;
-        this->_energy_points = src._energy_points;
-        this->_attack_damage = src._attack_damage;
-        this->_gate_keeper_mode = src._gate_keeper_mode;
-    }
-    std::cout << "ScavTrap: This is the assignation operator overloading" << std::endl;
+    this->_name = src._name;
+    this->_hit_points = src._hit_points;
+    this->_energy_points = src._energy_points;
+    this->_attack_damage = src._attack_damage;
+    this->_is_guard_gate = src._is_guard_gate;
+    std::cout << "ScavTrap: This is the Assignment operator overloading" << std::endl;
     return *this;
 }
 
@@ -67,6 +64,6 @@ void ScavTrap::guardGate(void)
     else
     {
         std::cout << this->_name << " is now in Gate keeper mode." << std::endl;
-        this->_gate_keeper_mode = true;
+        this->_is_guard_gate = true;
     }
 }

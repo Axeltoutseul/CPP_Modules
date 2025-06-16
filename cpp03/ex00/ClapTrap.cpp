@@ -36,7 +36,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &src)
     this->_hit_points = src._hit_points;
     this->_energy_points = src._energy_points;
     this->_attack_damage = src._attack_damage;
-    std::cout << "ClapTrap: Assignation operator overloading called" << std::endl;
+    std::cout << "ClapTrap: Assignment operator overloading called" << std::endl;
     return *this;
 }
 

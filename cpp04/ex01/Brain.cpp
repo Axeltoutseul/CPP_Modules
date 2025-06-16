@@ -23,6 +23,6 @@ Brain &Brain::operator=(const Brain &src)
 {
     if (this != &src)
         this->ideas[100] = src.ideas[100];
-    std::cout << "Brain assignation operator called" << std::endl;
+    std::cout << "Brain Assignment operator called" << std::endl;
     return *this;
 }
