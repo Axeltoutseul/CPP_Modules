@@ -31,4 +31,3 @@ void WrongAnimal::makeSound(void) const
 {
     std::cout << "* A wrong animal make no sound *" << std::endl;
 }
-

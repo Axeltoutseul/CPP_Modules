@@ -35,6 +35,7 @@ int main(void)
     a.highFivesGuys();
     b.highFivesGuys();
     c.highFivesGuys();
+    std::cout << std::endl;
     delete d;
     return 0;
 }*/

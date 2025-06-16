@@ -23,5 +23,6 @@ int main(void)
     std::cout << std::endl;
     a.beRepaired(3);
     b.beRepaired(2);
+    std::cout << std::endl;
     return 0;
 }*/

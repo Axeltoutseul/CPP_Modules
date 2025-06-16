@@ -29,6 +29,7 @@ int main(void)
     std::cout << std::endl;
     a.guardGate();
     b.guardGate();
+    std::cout << std::endl;
     delete d;
     return 0;
 }*/
