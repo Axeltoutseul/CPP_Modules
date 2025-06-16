@@ -21,7 +21,7 @@ ClapTrap::ClapTrap(std::string name)
 ClapTrap::ClapTrap(const ClapTrap &src)
 {
     std::cout << "ClapTrap: Copy constructor called" << std::endl;
-    this->operator=(src);
+    *this = src;
 }
 
 ClapTrap::~ClapTrap(void)
@@ -32,13 +32,10 @@ ClapTrap::~ClapTrap(void)
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 {
-    if (this != &src)
-    {
-        this->_name = src._name;
-        this->_hit_points = src._hit_points;
-        this->_energy_points = src._energy_points;
-        this->_attack_damage = src._attack_damage;
-    }
+    this->_name = src._name;
+    this->_hit_points = src._hit_points;
+    this->_energy_points = src._energy_points;
+    this->_attack_damage = src._attack_damage;
     std::cout << "ClapTrap: Assignation overloading called" << std::endl;
     return *this;
 }

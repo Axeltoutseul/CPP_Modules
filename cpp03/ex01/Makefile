@@ -1,6 +1,6 @@
 CC = c++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 RM = rm -f
 
@@ -13,12 +13,12 @@ SRCS =	ClapTrap.cpp \
 OBJS = $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)
-	$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME)
 
 %.o: %.cpp
-	$(CC) $(CPPFLAGS) -c $< -o $@
+	$(CC) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)

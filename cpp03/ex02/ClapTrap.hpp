@@ -10,9 +10,9 @@ class ClapTrap {
     ClapTrap(void);
     ClapTrap(std::string name);
     ClapTrap(const ClapTrap &src);
-    ~ClapTrap(void);
+    virtual ~ClapTrap(void);
     ClapTrap &operator=(const ClapTrap &src);
-    void attack(const std::string& target);
+    virtual void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 
