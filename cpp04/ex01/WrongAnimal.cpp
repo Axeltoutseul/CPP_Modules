@@ -18,8 +18,7 @@ WrongAnimal::~WrongAnimal(void)
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &src)
 {
-    if (this != &src)
-        this->type = src.type;
+    this->type = src.type;
     return *this;
 }
 

@@ -20,8 +20,7 @@ Dog::~Dog(void)
 
 Dog &Dog::operator=(const Dog &src)
 {
-    if (this != &src)
-        this->type = src.type;
+    this->type = src.type;
     return *this;
 }
 

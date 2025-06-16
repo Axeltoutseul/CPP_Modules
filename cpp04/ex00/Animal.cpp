@@ -18,8 +18,7 @@ Animal::~Animal(void)
 
 Animal &Animal::operator=(const Animal &src)
 {
-    if (this != &src)
-        this->type = src.type;
+    this->type = src.type;
     return *this;
 }
 

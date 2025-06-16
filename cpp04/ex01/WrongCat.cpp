@@ -18,8 +18,7 @@ WrongCat::~WrongCat(void)
 
 WrongCat &WrongCat::operator=(const WrongCat &src)
 {
-    if (this != &src)
-        this->type = src.type;
+    this->type = src.type;
     return *this;
 }
 
