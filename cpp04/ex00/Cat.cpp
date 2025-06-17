@@ -6,6 +6,11 @@ Cat::Cat(void) : Animal()
     this->type = "Cat";
 }
 
+Cat::Cat(std::string name) : Animal(name)
+{
+    return;
+}
+
 Cat::Cat(const Cat &src) : Animal(src)
 {
     std::cout << "Copied cat" << std::endl;

@@ -6,6 +6,11 @@ Dog::Dog(void) : Animal()
     this->type = "Dog";
 }
 
+Dog::Dog(std::string name) : Animal(name)
+{
+    return;
+}
+
 Dog::Dog(const Dog &src) : Animal(src)
 {
     std::cout << "Copied dog" << std::endl;
