@@ -2,22 +2,26 @@
 
 Animal::Animal(void)
 {
+    std::cout << "Created animal" << std::endl;
     this->type = "Animal";
     return;
 }
 
 Animal::Animal(const Animal &src)
 {
+    std::cout << "Copied animal" << std::endl;
     *this = src;
 }
 
 Animal::~Animal(void)
 {
+    std::cout << "Killed animal" << std::endl;
     return;
 }
 
 Animal &Animal::operator=(const Animal &src)
 {
+    std::cout << "Animal: Assignment operator overloading called" << std::endl;
     this->type = src.type;
     return *this;
 }

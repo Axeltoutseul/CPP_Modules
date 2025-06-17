@@ -2,22 +2,26 @@
 
 WrongAnimal::WrongAnimal(void)
 {
+    std::cout << "Created wrong animal" << std::endl;
     this->type = "Wrong animal";
     return;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &src)
 {
+    std::cout << "Copied wrong animal" << std::endl;
     *this = src;
 }
 
 WrongAnimal::~WrongAnimal(void)
 {
+    std::cout << "Destroyed wrong animal" << std::endl;
     return;
 }
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &src)
 {
+    std::cout << "Wrong animal: Assignment operator overloading called" << std::endl;
     this->type = src.type;
     return *this;
 }

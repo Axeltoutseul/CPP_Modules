@@ -2,22 +2,26 @@
 
 Cat::Cat(void) : Animal()
 {
+    std::cout << "Created cat" << std::endl;
     this->type = "Cat";
     return;
 }
 
 Cat::Cat(const Cat &src) : Animal(src)
 {
+    std::cout << "Copied cat" << std::endl;
     *this = src;
 }
 
 Cat::~Cat(void)
 {
+    std::cout << "Killed cat" << std::endl;
     return;
 }
 
 Cat &Cat::operator=(const Cat &src)
 {
+    std::cout << "Cat: Assignment operator overloading called" << std::endl;
     this->type = src.type;
     return *this;
 }
