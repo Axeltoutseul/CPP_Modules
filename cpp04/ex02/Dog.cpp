@@ -15,7 +15,10 @@ Dog::Dog(const Dog &src) : Animal(src)
 
 Dog::~Dog(void)
 {
-    std::cout << "Killed dog" << std::endl;
+    if (this->type != "Dog")
+        std::cout << "Killed " << this->type << std::endl;
+    else
+        std::cout << "Killed dog" << std::endl;
     delete brain;
 }
 
