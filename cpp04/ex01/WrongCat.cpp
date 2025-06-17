@@ -4,7 +4,6 @@ WrongCat::WrongCat(void)
 {
     std::cout << "Created wrong cat" << std::endl;
     this->type = "Wrong cat";
-    return;
 }
 
 WrongCat::WrongCat(const WrongCat &src)
@@ -16,7 +15,6 @@ WrongCat::WrongCat(const WrongCat &src)
 WrongCat::~WrongCat(void)
 {
     std::cout << "Destroyed wrong cat" << std::endl;
-    return;
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &src)

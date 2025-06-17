@@ -4,7 +4,12 @@ Animal::Animal(void)
 {
     std::cout << "Created animal" << std::endl;
     this->type = "Animal";
-    return;
+}
+
+Animal::Animal(std::string name)
+{
+    std::cout << "Created " << name << std::endl;
+    this->type = name;
 }
 
 Animal::Animal(const Animal &src)
@@ -16,7 +21,6 @@ Animal::Animal(const Animal &src)
 Animal::~Animal(void)
 {
     std::cout << "Killed animal" << std::endl;
-    return;
 }
 
 Animal &Animal::operator=(const Animal &src)

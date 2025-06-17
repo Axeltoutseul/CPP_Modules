@@ -7,6 +7,12 @@ WrongAnimal::WrongAnimal(void)
     return;
 }
 
+WrongAnimal::WrongAnimal(std::string name)
+{
+    std::cout << "Created " << name << std::endl;
+    this->type = name;
+}
+
 WrongAnimal::WrongAnimal(const WrongAnimal &src)
 {
     std::cout << "Copied wrong animal" << std::endl;
