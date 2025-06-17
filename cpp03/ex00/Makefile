@@ -8,7 +8,7 @@ NAME = ClapTrap
 
 DIR_NAME = objects/
 
-MKDIR = mkdir -p $(DIR_NAME)
+MKDIR = mkdir -p
 
 SRCS =	ClapTrap.cpp \
 		main.cpp
@@ -22,8 +22,10 @@ $(NAME): $(OBJS)
 
 all: $(NAME)
 
-$(DIR_NAME)%.o: %.cpp
-	$(MKDIR)
+$(DIR_NAME):
+	$(MKDIR) $(DIR_NAME)
+
+$(DIR_NAME)%.o: %.cpp | $(DIR_NAME)
 	$(CC) $(CXXFLAGS) -c $< -o $@
 
 clean:
