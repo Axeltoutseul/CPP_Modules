@@ -9,15 +9,17 @@ int main()
     const Animal* i = new Cat();
     const WrongAnimal* wra = new WrongAnimal();
     const WrongAnimal* wrc = new WrongCat();
+    std::cout << std::endl;
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
     std::cout << wra->getType() << " " << std::endl;
     std::cout << wrc->getType() << " " << std::endl << std::endl;
-    i->makeSound(); //will output the cat sound!
+    i->makeSound();
     j->makeSound();
     meta->makeSound();
     wra->makeSound();
     wrc->makeSound();
+    std::cout << std::endl;
     delete j;
     delete i;
     delete meta;
