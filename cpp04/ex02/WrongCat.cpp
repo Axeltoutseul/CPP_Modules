@@ -6,6 +6,11 @@ WrongCat::WrongCat(void)
     this->type = "Wrong cat";
 }
 
+WrongCat::WrongCat(std::string name) : WrongAnimal(name)
+{
+    return;
+}
+
 WrongCat::WrongCat(const WrongCat &src)
 {
     std::cout << "Copied wrong cat" << std::endl;

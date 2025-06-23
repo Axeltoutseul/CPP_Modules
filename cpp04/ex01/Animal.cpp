@@ -20,10 +20,7 @@ Animal::Animal(const Animal &src)
 
 Animal::~Animal(void)
 {
-    if (this->type != "Animal")
-        std::cout << "Killed " << this->type << std::endl;
-    else
-        std::cout << "Killed animal" << std::endl;
+    std::cout << "Killed animal" << std::endl;
 }
 
 Animal &Animal::operator=(const Animal &src)

@@ -14,17 +14,15 @@ Cat::Cat(std::string name) : Animal(name)
 
 Cat::Cat(const Cat &src) : Animal(src)
 {
+    brain = new Brain(*src.brain);
     std::cout << "Copied cat" << std::endl;
     *this = src;
 }
 
 Cat::~Cat(void)
 {
-    if (this->type != "Cat")
-        std::cout << "Killed " << this->type << std::endl;
-    else
-        std::cout << "Killed cat" << std::endl;
     delete brain;
+    std::cout << "Killed cat" << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &src)
@@ -37,4 +35,14 @@ Cat &Cat::operator=(const Cat &src)
 void Cat::makeSound(void) const
 {
     std::cout << "Miaou !" << std::endl;
+}
+
+void Cat::displayIdeas(void)
+{
+    this->brain->displayIdeas();
+}
+
+void Cat::setIdea(std::string idea, int i)
+{
+    this->brain->setIdea(idea, i);
 }

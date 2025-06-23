@@ -5,6 +5,7 @@ Brain::Brain(void)
     int i = 0;
     while (i < 100)
         this->ideas[i++] = "Default";
+    //this->displayIdeas();
     std::cout << "Brain default constructor called" << std::endl;
 }
 
@@ -21,8 +22,27 @@ Brain::~Brain(void)
 
 Brain &Brain::operator=(const Brain &src)
 {
-    if (this != &src)
-        this->ideas[100] = src.ideas[100];
+    for (int i = 0; i < 100; i++)
+        this->ideas[i] = src.ideas[i];
     std::cout << "Brain Assignment operator called" << std::endl;
     return *this;
+}
+
+void Brain::displayIdeas(void)
+{
+    int i = 0;
+    std::cout << std::endl;
+    while (i < 100)
+        std::cout << this->ideas[i++] << std::endl;
+    std::cout << std::endl;
+}
+
+std::string Brain::getIdea(int i)
+{
+    return this->ideas[i];
+}
+
+void Brain::setIdea(std::string idea, int i)
+{
+    this->ideas[i] = idea;
 }

@@ -14,6 +14,8 @@ class Cat : public Animal {
     ~Cat(void);
     Cat &operator=(const Cat &src);
     void makeSound(void) const;
+    void displayIdeas(void);
+    void setIdea(std::string idea, int i);
 
 
     private:

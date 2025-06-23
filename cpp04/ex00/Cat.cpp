@@ -19,10 +19,7 @@ Cat::Cat(const Cat &src) : Animal(src)
 
 Cat::~Cat(void)
 {
-    if (this->type != "Cat")
-        std::cout << "Killed " << this->type << std::endl;
-    else
-        std::cout << "Killed cat" << std::endl;
+    std::cout << "Killed cat" << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &src)

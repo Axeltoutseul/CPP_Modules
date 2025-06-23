@@ -4,7 +4,6 @@ WrongAnimal::WrongAnimal(void)
 {
     std::cout << "Created wrong animal" << std::endl;
     this->type = "Wrong animal";
-    return;
 }
 
 WrongAnimal::WrongAnimal(std::string name)
@@ -22,7 +21,6 @@ WrongAnimal::WrongAnimal(const WrongAnimal &src)
 WrongAnimal::~WrongAnimal(void)
 {
     std::cout << "Destroyed wrong animal" << std::endl;
-    return;
 }
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &src)
@@ -39,5 +37,5 @@ std::string WrongAnimal::getType(void) const
 
 void WrongAnimal::makeSound(void) const
 {
-    std::cout << "* A wrong animal make no sound *" << std::endl;
+    std::cout << "* A wrong animal makes no sound *" << std::endl;
 }
