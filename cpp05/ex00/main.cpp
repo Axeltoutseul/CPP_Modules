@@ -9,7 +9,7 @@ int main(void)
     {
         if (grade >= 1 && grade <= 150)
         {
-            std::cout << "Grade = " << grade << std::endl;
+            std::cout << employee.getName() << ", bureaucrat grade " << grade << std::endl;
         }
         else if (grade > 150)
             throw GradeTooLowException("The grade is too low !");

@@ -35,8 +35,9 @@ class Bureaucrat {
     public:
 
     Bureaucrat(void);
-    //Bureaucrat(Bureaucrat &src);
+    Bureaucrat(Bureaucrat &src);
     ~Bureaucrat(void);
+    Bureaucrat &operator=(const Bureaucrat &src);
     int GradeTooLowException(void);
     int GradeTooHighException(void);
     std::string getName(void);
@@ -45,7 +46,7 @@ class Bureaucrat {
 
     private:
 
-    const std::string _name;
+    std::string _name;
     int _grade;
 };
 

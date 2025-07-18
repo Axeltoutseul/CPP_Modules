@@ -34,19 +34,29 @@ void GradeTooHighException::what(void)
 
 Bureaucrat::Bureaucrat(void)
 {
-    this->_grade = 0;
+    this->_grade = 1;
+    this->_name = "Pierre";
     std::cout << "Default constructor called" << std::endl;
 }
 
-/*Bureaucrat::Bureaucrat(Bureaucrat &src)
+Bureaucrat::Bureaucrat(Bureaucrat &src)
 {
     this->_grade = src._grade;
+    this->_name = src._name;
     std::cout << "Copy constructor called" << std::endl;
-}*/
+}
 
 Bureaucrat::~Bureaucrat(void)
 {
     std::cout << "Destructor called" << std::endl;
+}
+
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src)
+{
+    this->_grade = src._grade;
+    this->_name = src._name;
+    std::cout << "Copy assignment operator called" << std::endl;
+    return *this;
 }
 
 int Bureaucrat::GradeTooHighException(void)
