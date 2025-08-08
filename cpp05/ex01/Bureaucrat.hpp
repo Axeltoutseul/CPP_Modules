@@ -51,6 +51,4 @@ class GradeTooHighException{
     std::string _message;
 };
 
-
-
 #endif
