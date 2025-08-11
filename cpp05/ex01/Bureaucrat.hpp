@@ -19,7 +19,7 @@ class Bureaucrat {
         public:
 
         GradeTooLowException();
-        virtual ~GradeTooLowException(void);
+        virtual ~GradeTooLowException(void) throw();
 
 
         private:
@@ -32,7 +32,7 @@ class Bureaucrat {
         public:
 
         GradeTooHighException();
-        virtual ~GradeTooHighException(void);
+        virtual ~GradeTooHighException(void) throw();
 
 
         private:

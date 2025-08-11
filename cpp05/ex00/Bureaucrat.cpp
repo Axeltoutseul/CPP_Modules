@@ -43,7 +43,7 @@ Bureaucrat::GradeTooLowException::GradeTooLowException(void)
     return;
 }
 
-Bureaucrat::GradeTooLowException::~GradeTooLowException(void)
+Bureaucrat::GradeTooLowException::~GradeTooLowException(void) throw()
 {
     return;
 }
@@ -54,7 +54,7 @@ Bureaucrat::GradeTooHighException::GradeTooHighException()
     return;
 }
 
-Bureaucrat::GradeTooHighException::~GradeTooHighException(void)
+Bureaucrat::GradeTooHighException::~GradeTooHighException(void) throw()
 {
     return;
 }
