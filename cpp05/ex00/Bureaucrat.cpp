@@ -10,7 +10,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name), _grade(
     std::cout << "Parameterized constructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat &src) : _name(src._name), _grade(src._grade)
+Bureaucrat::Bureaucrat(const Bureaucrat &src) : _name(src._name), _grade(src._grade)
 {
     std::cout << "Copy constructor called" << std::endl;
 }

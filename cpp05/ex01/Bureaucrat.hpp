@@ -8,7 +8,7 @@ class Bureaucrat {
 
     Bureaucrat(void);
     Bureaucrat(const std::string name, int grade);
-    Bureaucrat(Bureaucrat &src);
+    Bureaucrat(const Bureaucrat &src);
     ~Bureaucrat(void);
     Bureaucrat &operator=(const Bureaucrat &src);
     std::string getName(void);
