@@ -27,13 +27,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src)
     return *this;
 }
 
-int Bureaucrat::GradeTooHighException(void)
-{
-    if (this->_grade < 1)
-        return 1;
-    return 0;
-}
-
 std::string Bureaucrat::getName(void)
 {
     return this->_name;
@@ -44,34 +37,24 @@ int Bureaucrat::getGrade(void)
     return this->_grade;
 }
 
-GradeTooLowException::GradeTooLowException(std::string message)
+Bureaucrat::GradeTooLowException::GradeTooLowException(void)
 {
-    this->_message = message;
+    this->_message = "The grade is too low";
     return;
 }
 
-GradeTooLowException::~GradeTooLowException(void)
-{
-    return;
-}
-
-void GradeTooLowException::what(void)
-{
-    std::cout << this->_message << std::endl;
-}
-
-GradeTooHighException::GradeTooHighException(std::string message)
-{
-    this->_message = message;
-    return;
-}
-
-GradeTooHighException::~GradeTooHighException(void)
+Bureaucrat::GradeTooLowException::~GradeTooLowException(void)
 {
     return;
 }
 
-void GradeTooHighException::what(void)
+Bureaucrat::GradeTooHighException::GradeTooHighException()
 {
-    std::cout << this->_message << std::endl;
+    this->_message = "The grade is too low";
+    return;
+}
+
+Bureaucrat::GradeTooHighException::~GradeTooHighException(void)
+{
+    return;
 }

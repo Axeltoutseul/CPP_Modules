@@ -11,15 +11,15 @@ int main(void)
         if (grade >= 1 && grade <= 150)
             std::cout << worker.getName() << ", bureaucrat grade " << grade << std::endl;
         else if (grade > 150)
-            throw GradeTooLowException("The grade is too low !");
+            throw Bureaucrat::GradeTooLowException();
         else
-            throw GradeTooHighException("The grade is too high !");
+            throw Bureaucrat::GradeTooHighException();
     }
-    catch (GradeTooLowException &e)
+    catch (Bureaucrat::GradeTooLowException &e)
     {
         e.what();
     }
-    catch (GradeTooHighException &e)
+    catch (Bureaucrat::GradeTooHighException &e)
     {
         e.what();
     }

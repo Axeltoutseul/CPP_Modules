@@ -11,44 +11,40 @@ class Bureaucrat {
     Bureaucrat(Bureaucrat &src);
     ~Bureaucrat(void);
     Bureaucrat &operator=(const Bureaucrat &src);
-    int GradeTooLowException(void);
-    int GradeTooHighException(void);
     std::string getName(void);
     int getGrade(void);
+
+    class GradeTooLowException : public std::exception {
+
+        public:
+
+        GradeTooLowException();
+        virtual ~GradeTooLowException(void);
+
+
+        private:
+
+        std::string _message;
+    };
+
+    class GradeTooHighException : public std::exception {
+
+        public:
+
+        GradeTooHighException();
+        virtual ~GradeTooHighException(void);
+
+
+        private:
+
+        std::string _message;
+    };
 
 
     private:
 
     const std::string _name;
     int _grade;
-};
-
-class GradeTooLowException{
-
-    public:
-
-    GradeTooLowException(std::string message);
-    virtual ~GradeTooLowException(void);
-    void what(void);
-
-
-    private:
-
-    std::string _message;
-};
-
-class GradeTooHighException{
-
-    public:
-
-    GradeTooHighException(std::string message);
-    virtual ~GradeTooHighException(void);
-    void what(void);
-
-
-    private:
-
-    std::string _message;
 };
 
 #endif
