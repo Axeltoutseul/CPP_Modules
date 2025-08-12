@@ -29,3 +29,7 @@ void Form::beSigned(Bureaucrat employee)
     if (employee.getGrade() <= this->_grade_to_sign)
         this->_is_signed = true;
 }
+
+std::ostream &operator<<(std::ostream &os, const Form &obj)
+{
+}

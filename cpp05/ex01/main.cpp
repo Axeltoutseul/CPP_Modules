@@ -2,14 +2,15 @@
 
 int main(void)
 {
-    Bureaucrat employee("Joe", 0);
+    Bureaucrat employee("Alex", 1);
     Bureaucrat worker(employee);
+    worker.incrementGrade();
     int grade = worker.getGrade();
 
     try
     {
         if (grade >= 1 && grade <= 150)
-            std::cout << worker.getName() << ", bureaucrat grade " << grade << std::endl;
+            std::cout << worker << std::endl;
         else if (grade > 150)
             throw Bureaucrat::GradeTooLowException();
         else

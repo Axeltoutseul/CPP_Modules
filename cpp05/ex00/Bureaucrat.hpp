@@ -11,9 +11,10 @@ class Bureaucrat {
     Bureaucrat(const Bureaucrat &src);
     ~Bureaucrat();
     Bureaucrat &operator=(const Bureaucrat &src);
-    std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj);
     std::string getName() const;
     int getGrade() const;
+    void incrementGrade();
+    void decrementGrade();
 
     class GradeTooLowException {
 
@@ -39,5 +40,7 @@ class Bureaucrat {
     const std::string _name;
     int _grade;
 };
+
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj);
 
 #endif

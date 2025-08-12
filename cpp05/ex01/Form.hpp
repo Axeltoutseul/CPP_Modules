@@ -11,6 +11,7 @@ class Form {
     ~Form();
     Form &operator=(const Form &src);
     void beSigned(Bureaucrat e);
+    std::string getDetails(const Form &form);
 
     class GradeTooLowException : public std::exception {
 
@@ -18,11 +19,6 @@ class Form {
 
         GradeTooLowException();
         virtual ~GradeTooLowException(void) throw();
-
-
-        private:
-
-        std::string _message;
     };
 
     class GradeTooHighException : public std::exception {
@@ -31,11 +27,6 @@ class Form {
 
         GradeTooHighException();
         virtual ~GradeTooHighException(void) throw();
-
-
-        private:
-
-        std::string _message;
     };
 
 
@@ -46,5 +37,7 @@ class Form {
     const int _grade_to_sign;
     const int _grade_to_execute;
 };
+
+std::ostream &operator<<(std::ostream &os, const Form &obj);
 
 #endif
