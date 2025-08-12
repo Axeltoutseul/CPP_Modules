@@ -1,60 +1,74 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(void) : _name("Paul"), _grade(150)
+Bureaucrat::Bureaucrat() : _name("Paul"), _grade(150)
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "Bureaucrat : Default constructor called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name), _grade(grade)
 {
-    std::cout << "Parameterized constructor called" << std::endl;
+    std::cout << "Bureaucrat : Parameterized constructor called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src) : _name(src._name), _grade(src._grade)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Bureaucrat : Copy constructor called" << std::endl;
 }
 
-Bureaucrat::~Bureaucrat(void)
+Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "Bureaucrat : Destructor called" << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src)
 {
     this->_grade = src._grade;
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "Bureaucrat : Copy assignment operator called" << std::endl;
     return *this;
 }
 
-std::string Bureaucrat::getName(void)
+std::string Bureaucrat::getName() const
 {
     return this->_name;
 }
 
-int Bureaucrat::getGrade(void)
+int Bureaucrat::getGrade() const
 {
     return this->_grade;
 }
 
-Bureaucrat::GradeTooLowException::GradeTooLowException(void)
+Bureaucrat::GradeTooLowException::GradeTooLowException()
 {
-    this->_message = "The grade is too low";
     return;
 }
 
-Bureaucrat::GradeTooLowException::~GradeTooLowException(void) throw()
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw()
 {
     return;
 }
 
 Bureaucrat::GradeTooHighException::GradeTooHighException()
 {
-    this->_message = "The grade is too low";
     return;
 }
 
-Bureaucrat::GradeTooHighException::~GradeTooHighException(void) throw()
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
 {
     return;
+}
+
+void Bureaucrat::GradeTooLowException::what()
+{
+    std::cout << "The grade is too low" << std::endl;
+}
+
+void Bureaucrat::GradeTooHighException::what()
+{
+    std::cout << "The grade is too high" << std::endl;
+}
+
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj)
+{
+    os << obj.getName() << ", bureaucrat grade " << obj.getGrade();
+    return os;
 }

@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    Bureaucrat employee("Joe", 12);
+    Bureaucrat employee("Joe", 0);
     Bureaucrat worker(employee);
     int grade = worker.getGrade();
 
