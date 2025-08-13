@@ -18,11 +18,11 @@ int main(void)
     }
     catch (Bureaucrat::GradeTooLowException &e)
     {
-        e.what();
+        std::cout << e.what() << std::endl;
     }
     catch (Bureaucrat::GradeTooHighException &e)
     {
-        e.what();
+        std::cout << e.what() << std::endl;
     }
     return 0;
 }
