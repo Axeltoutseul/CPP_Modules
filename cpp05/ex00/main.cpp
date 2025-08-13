@@ -2,21 +2,21 @@
 
 int main(void)
 {
-    Bureaucrat employee("Alex", 0);
-    Bureaucrat worker(employee);
     try
     {
+        Bureaucrat employee("Alex", 1);
+        Bureaucrat worker(employee);
         std::cout << worker << std::endl;
         worker.incrementGrade();
         std::cout << worker << std::endl;
     }
     catch (Bureaucrat::GradeTooLowException &e)
     {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
     catch (Bureaucrat::GradeTooHighException &e)
     {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
     return 0;
 }

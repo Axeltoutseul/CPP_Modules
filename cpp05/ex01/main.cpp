@@ -1,28 +1,40 @@
-#include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-int main(void)
+/*int main(void)
 {
-    Bureaucrat employee("Alex", 1);
-    Bureaucrat worker(employee);
-    worker.incrementGrade();
-    int grade = worker.getGrade();
-
     try
     {
-        if (grade >= 1 && grade <= 150)
-            std::cout << worker << std::endl;
-        else if (grade > 150)
-            throw Bureaucrat::GradeTooLowException();
-        else
-            throw Bureaucrat::GradeTooHighException();
+        Bureaucrat employee("Alex", 1);
+        Bureaucrat worker(employee);
+        std::cout << worker << std::endl;
+        worker.incrementGrade();
+        std::cout << worker << std::endl;
     }
     catch (Bureaucrat::GradeTooLowException &e)
     {
-        e.what();
+        std::cerr << e.what() << std::endl;
     }
     catch (Bureaucrat::GradeTooHighException &e)
     {
-        e.what();
+        std::cerr << e.what() << std::endl;
     }
+    return 0;
+}*/
+
+int main(void)
+{
+    //try
+    //{
+        Form formulaire;
+        std::cout << formulaire << std::endl;
+    /*}
+    catch (Form::GradeTooLowException &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    catch (Form::GradeTooHighException &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }*/
     return 0;
 }
