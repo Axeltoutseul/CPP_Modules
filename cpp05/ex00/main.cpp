@@ -2,19 +2,13 @@
 
 int main(void)
 {
-    Bureaucrat employee("Alex", 1);
-    Bureaucrat worker = employee;
-    worker.incrementGrade();
-    int grade = worker.getGrade();
-
+    Bureaucrat employee("Alex", 0);
+    Bureaucrat worker(employee);
     try
     {
-        if (grade >= 1 && grade <= 150)
-            std::cout << worker << std::endl;
-        else if (grade > 150)
-            throw Bureaucrat::GradeTooLowException();
-        else
-            throw Bureaucrat::GradeTooHighException();
+        std::cout << worker << std::endl;
+        worker.incrementGrade();
+        std::cout << worker << std::endl;
     }
     catch (Bureaucrat::GradeTooLowException &e)
     {

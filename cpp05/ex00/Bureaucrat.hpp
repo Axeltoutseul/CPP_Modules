@@ -15,6 +15,7 @@ class Bureaucrat {
     int getGrade() const;
     void incrementGrade();
     void decrementGrade();
+    void displayInfos();
 
     class GradeTooLowException : public std::exception {
 
