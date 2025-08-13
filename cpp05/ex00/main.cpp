@@ -3,7 +3,7 @@
 int main(void)
 {
     Bureaucrat employee("Alex", 1);
-    Bureaucrat worker(employee);
+    Bureaucrat worker = employee;
     worker.incrementGrade();
     int grade = worker.getGrade();
 
