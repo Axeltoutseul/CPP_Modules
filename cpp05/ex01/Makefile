@@ -4,7 +4,7 @@ CXXFLAGS = -Wall -Wextra -Werror -MMD -std=c++98 -g
 
 RM = rm -f
 
-NAME = Bureaucrat
+NAME = Form
 
 OBJS_DIR = objects/
 

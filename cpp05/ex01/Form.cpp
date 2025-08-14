@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form() : _name("2042C"), _grade_to_sign(3), _grade_to_execute(2)
+Form::Form() : _name("2042C"), _grade_to_sign(120), _grade_to_execute(120)
 {
     this->_is_signed = false;
     std::cout << "Form : Default constructor called" << std::endl;
@@ -9,12 +9,20 @@ Form::Form() : _name("2042C"), _grade_to_sign(3), _grade_to_execute(2)
 Form::Form(const std::string name, int grade_to_sign, int grade_to_execute) : _name(name), _grade_to_sign(grade_to_sign), _grade_to_execute(grade_to_execute)
 {
     this->_is_signed = false;
+    if (this->_grade_to_sign < 1 || this->_grade_to_execute < 1)
+        throw(Form::GradeTooHighException());
+    if (this->_grade_to_sign > 150 || this->_grade_to_execute > 150)
+        throw(Form::GradeTooLowException());
     std::cout << "Form : Parameterized constructor called" << std::endl;
 }
 
 Form::Form(const Form &src) : _name(src._name), _grade_to_sign(src._grade_to_sign), _grade_to_execute(src._grade_to_execute)
 {
     this->_is_signed = src._is_signed;
+    if (this->_grade_to_sign < 1 || this->_grade_to_execute < 1)
+        throw(Form::GradeTooHighException());
+    if (this->_grade_to_sign > 150 || this->_grade_to_execute > 150)
+        throw(Form::GradeTooLowException());
     std::cout << "Form : Copy constructor called" << std::endl;
 }
 
@@ -46,10 +54,18 @@ std::string Form::getDetails()
     + grade_to_sign.str() + "\nGrade to execute = " + grade_to_exec.str();
 }
 
-void Form::beSigned(Bureaucrat employee)
+void Form::beSigned(Bureaucrat &employee)
 {
     if (employee.getGrade() <= this->_grade_to_sign)
+    {
         this->_is_signed = true;
+        std::cout << employee.getName() << " signed " << this->_name << std::endl;
+    }
+    else
+    {
+        std::cout << employee.getName() << " couldn't sign " << this->_name << " because his grade is too low" << std::endl;
+        throw(Form::GradeTooLowException());
+    }
 }
 
 std::ostream &operator<<(std::ostream &os, Form &obj)

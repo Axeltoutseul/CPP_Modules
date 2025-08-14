@@ -12,23 +12,23 @@ class Form {
     Form(const Form &src);
     ~Form();
     Form &operator=(const Form &src);
-    void beSigned(Bureaucrat e);
+    void beSigned(Bureaucrat &employee);
     std::string getDetails();
 
     class GradeTooLowException : public std::exception {
 
         public:
-
-        GradeTooLowException();
-        virtual ~GradeTooLowException(void) throw();
+        const char *what() const throw() {
+            return "A grade is too low";
+        }
     };
 
     class GradeTooHighException : public std::exception {
 
         public:
-
-        GradeTooHighException();
-        virtual ~GradeTooHighException(void) throw();
+        const char *what() const throw() {
+            return "A grade is too high";
+        }
     };
 
 

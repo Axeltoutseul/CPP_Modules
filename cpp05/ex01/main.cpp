@@ -1,14 +1,14 @@
 #include "Form.hpp"
 
-/*int main(void)
+int main(void)
 {
     try
     {
-        Bureaucrat employee("Alex", 1);
-        Bureaucrat worker(employee);
-        std::cout << worker << std::endl;
-        worker.incrementGrade();
-        std::cout << worker << std::endl;
+        Bureaucrat employee("Francois", 22);
+        Form first_form("2042C", 1, 1);
+        Form second_form(first_form);
+        std::cout << std::endl << second_form << std::endl << std::endl;
+        second_form.beSigned(employee);
     }
     catch (Bureaucrat::GradeTooLowException &e)
     {
@@ -18,16 +18,6 @@
     {
         std::cerr << e.what() << std::endl;
     }
-    return 0;
-}*/
-
-int main(void)
-{
-    //try
-    //{
-        Form formulaire;
-        std::cout << formulaire << std::endl;
-    /*}
     catch (Form::GradeTooLowException &e)
     {
         std::cerr << e.what() << std::endl;
@@ -35,6 +25,6 @@ int main(void)
     catch (Form::GradeTooHighException &e)
     {
         std::cerr << e.what() << std::endl;
-    }*/
+    }
     return 0;
 }
