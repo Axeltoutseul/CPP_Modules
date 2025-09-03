@@ -59,6 +59,11 @@ void Bureaucrat::decrementGrade()
     this->_grade++;
 }
 
+void Bureaucrat::executeForm(AForm const &form)
+{
+    form.execute(*this);
+}
+
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj)
 {
     os << obj.getName() << ", bureaucrat grade " << obj.getGrade();

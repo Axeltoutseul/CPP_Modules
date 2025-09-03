@@ -7,10 +7,10 @@ int main(void)
     try
     {
         Bureaucrat employee("Jean", 2);
-        AForm first_form("28B", 1, 1);
-        AForm second_form(first_form);
+        PresidentialPardonForm first_form;
+        PresidentialPardonForm second_form(first_form);
         employee.incrementGrade();
-        second_form.beSigned(employee);
+        first_form.beSigned(employee);
     }
     catch(Bureaucrat::GradeTooLowException &e)
     {

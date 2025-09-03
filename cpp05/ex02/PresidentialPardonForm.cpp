@@ -1,11 +1,11 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm()
+PresidentialPardonForm::PresidentialPardonForm() : AForm("Presidential Pardon Form", 25, 5)
 {
     std::cout << "PresidentialPardonForm : Default constructor called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string name, int grade_to_sign, int grade_to_execute) : AForm(name, grade_to_sign, grade_to_execute)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src) : AForm(src)
 {
     std::cout << "PresidentialPardonForm : Copy constructor called" << std::endl;
 }
@@ -13,4 +13,9 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string name, int grade
 PresidentialPardonForm::~PresidentialPardonForm()
 {
     std::cout << "PresidentialPardonForm : Destructor called" << std::endl;
+}
+
+void forgive(std::string target)
+{
+    std::cout << target << " has been pardonned by Zaphod Beeblebrox." << std::endl;
 }

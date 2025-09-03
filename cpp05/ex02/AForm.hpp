@@ -3,6 +3,8 @@
 #include <sstream>
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class AForm {
 
     public:
@@ -13,6 +15,7 @@ class AForm {
     virtual ~AForm();
     AForm &operator=(const AForm &src);
     void beSigned(Bureaucrat &employee);
+    void execute(Bureaucrat &employee);
     std::string getDetails();
 
     class GradeTooLowException : public std::exception {
@@ -28,6 +31,14 @@ class AForm {
         public:
         const char *what() const throw() {
             return "A grade is too high";
+        }
+    };
+
+    class NotSignedException : public std::exception {
+
+        public:
+        const char *what() const throw() {
+            return "Form not signed";
         }
     };
 

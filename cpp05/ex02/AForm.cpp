@@ -1,4 +1,5 @@
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
 
 AForm::AForm() : _name("28B"), _grade_to_sign(120), _grade_to_execute(120)
 {
@@ -60,6 +61,24 @@ void AForm::beSigned(Bureaucrat &employee)
     {
         this->_is_signed = true;
         std::cout << employee.getName() << " signed " << this->_name << std::endl;
+    }
+    else
+    {
+        std::cout << employee.getName() << " couldn't sign " << this->_name << " because his grade is too low" << std::endl;
+        throw(AForm::GradeTooLowException());
+    }
+}
+
+void AForm::execute(Bureaucrat &employee)
+{
+    if (employee.getGrade() <= this->_grade_to_sign && this->_is_signed == true)
+    {
+        this->_is_signed = true;
+        std::cout << employee.getName() << " signed " << this->_name << std::endl;
+    }
+    else if (this->_is_signed == false)
+    {
+        throw(AForm::NotSignedException());
     }
     else
     {
