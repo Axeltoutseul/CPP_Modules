@@ -19,7 +19,7 @@ class Bureaucrat {
     void incrementGrade();
     void decrementGrade();
     void displayInfos();
-    void executeForm(AForm const &form);
+    void executeForm(AForm const &form) const;
 
     class GradeTooLowException : public std::exception {
 

@@ -69,24 +69,6 @@ void AForm::beSigned(Bureaucrat &employee)
     }
 }
 
-void AForm::execute(Bureaucrat &employee)
-{
-    if (employee.getGrade() <= this->_grade_to_sign && this->_is_signed == true)
-    {
-        this->_is_signed = true;
-        std::cout << employee.getName() << " signed " << this->_name << std::endl;
-    }
-    else if (this->_is_signed == false)
-    {
-        throw(AForm::NotSignedException());
-    }
-    else
-    {
-        std::cout << employee.getName() << " couldn't sign " << this->_name << " because his grade is too low" << std::endl;
-        throw(AForm::GradeTooLowException());
-    }
-}
-
 std::ostream &operator<<(std::ostream &os, AForm &obj)
 {
     os << obj.getDetails();

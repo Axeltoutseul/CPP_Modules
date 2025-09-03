@@ -15,7 +15,7 @@ class AForm {
     virtual ~AForm();
     AForm &operator=(const AForm &src);
     void beSigned(Bureaucrat &employee);
-    void execute(Bureaucrat &employee);
+    virtual void execute(Bureaucrat const &executor) const;
     std::string getDetails();
 
     class GradeTooLowException : public std::exception {

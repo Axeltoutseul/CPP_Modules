@@ -59,8 +59,7 @@ void Bureaucrat::decrementGrade()
     this->_grade++;
 }
 
-void Bureaucrat::executeForm(AForm const &form)
-{
+void Bureaucrat::executeForm(AForm const &form) const {
     form.execute(*this);
 }
 

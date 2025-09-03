@@ -19,3 +19,21 @@ void forgive(std::string target)
 {
     std::cout << target << " has been pardonned by Zaphod Beeblebrox." << std::endl;
 }
+
+void PresidentialPardonForm::execute(Bureaucrat const &executor)
+{
+    if (executor.getGrade() <= this->_grade_to_sign && this->_is_signed == true)
+    {
+        this->_is_signed = true;
+        std::cout << executor.getName() << " signed " << this->_name << std::endl;
+    }
+    else if (this->_is_signed == false)
+    {
+        throw(AForm::NotSignedException());
+    }
+    else
+    {
+        std::cout << executor.getName() << " couldn't sign " << this->_name << " because his grade is too low" << std::endl;
+        throw(AForm::GradeTooLowException());
+    }
+}
