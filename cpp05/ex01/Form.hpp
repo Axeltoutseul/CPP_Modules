@@ -19,7 +19,7 @@ class Form {
 
         public:
         const char *what() const throw() {
-            return "A grade is too low";
+            return "The grade is too low";
         }
     };
 
@@ -27,7 +27,7 @@ class Form {
 
         public:
         const char *what() const throw() {
-            return "A grade is too high";
+            return "The grade is too high";
         }
     };
 

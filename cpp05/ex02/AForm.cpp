@@ -1,13 +1,13 @@
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-AForm::AForm() : _name("28B"), _grade_to_sign(120), _grade_to_execute(120)
+AForm::AForm() : _name("28B"), _grade_to_sign(120), _grade_to_execute(120), _target("Jim")
 {
     this->_is_signed = false;
     std::cout << "AForm : Default constructor called" << std::endl;
 }
 
-AForm::AForm(const std::string name, int grade_to_sign, int grade_to_execute) : _name(name), _grade_to_sign(grade_to_sign), _grade_to_execute(grade_to_execute)
+AForm::AForm(const std::string name, int grade_to_sign, int grade_to_execute, const std::string target) : _name(name), _grade_to_sign(grade_to_sign), _grade_to_execute(grade_to_execute), _target(target)
 {
     this->_is_signed = false;
     if (this->_grade_to_sign < 1 || this->_grade_to_execute < 1)
@@ -17,7 +17,7 @@ AForm::AForm(const std::string name, int grade_to_sign, int grade_to_execute) : 
     std::cout << "AForm : Parameterized constructor called" << std::endl;
 }
 
-AForm::AForm(const AForm &src) : _name(src._name), _grade_to_sign(src._grade_to_sign), _grade_to_execute(src._grade_to_execute)
+AForm::AForm(const AForm &src) : _name(src._name), _grade_to_sign(src._grade_to_sign), _grade_to_execute(src._grade_to_execute), _target(src._target)
 {
     this->_is_signed = src._is_signed;
     if (this->_grade_to_sign < 1 || this->_grade_to_execute < 1)
@@ -37,6 +37,16 @@ AForm &AForm::operator=(const AForm &src)
     this->_is_signed = src._is_signed;
     std::cout << "AForm : Copy assignment operator called" << std::endl;
     return *this;
+}
+
+std::string AForm::getName() const
+{
+    return this->_name;
+}
+
+std::string AForm::getTarget() const
+{
+    return this->_target;
 }
 
 std::string AForm::getDetails()
@@ -67,6 +77,14 @@ void AForm::beSigned(Bureaucrat &employee)
         std::cout << employee.getName() << " couldn't sign " << this->_name << " because his grade is too low" << std::endl;
         throw(AForm::GradeTooLowException());
     }
+}
+
+void AForm::checkExecution(const Bureaucrat &executor) const
+{
+    if (this->_is_signed == false)
+        throw(NotSignedException());
+    if (this->_grade_to_execute < executor.getGrade())
+        throw(GradeTooLowException());
 }
 
 std::ostream &operator<<(std::ostream &os, AForm &obj)
