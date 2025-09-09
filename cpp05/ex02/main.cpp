@@ -9,9 +9,11 @@ int main(void)
         Bureaucrat employee("Jean", 5);
         PresidentialPardonForm first_form;
         PresidentialPardonForm second_form(first_form);
+        std::cout << std::endl;
         employee.incrementGrade();
         second_form.beSigned(employee);
         employee.executeForm(second_form);
+        std::cout << std::endl;
     }
     catch(Bureaucrat::GradeTooLowException &e)
     {
