@@ -29,7 +29,10 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     filename = this->_target + "_shrubbery";
     std::ofstream new_file(filename.c_str());
     if (!new_file)
+    {
         std::cerr << "Error : can't open " << filename << std::endl;
+        return;
+    }
 
     new_file << "          *********         " << std::endl;
     new_file << "       ***************      " << std::endl;
