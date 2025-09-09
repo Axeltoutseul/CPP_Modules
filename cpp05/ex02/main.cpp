@@ -7,8 +7,8 @@ int main(void)
     try
     {
         Bureaucrat employee("Jean", 5);
-        PresidentialPardonForm first_form;
-        PresidentialPardonForm second_form(first_form);
+        ShrubberyCreationForm first_form("Garden");
+        ShrubberyCreationForm second_form(first_form);
         std::cout << std::endl;
         employee.incrementGrade();
         second_form.beSigned(employee);

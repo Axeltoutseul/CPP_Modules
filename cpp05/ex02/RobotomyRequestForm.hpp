@@ -6,9 +6,16 @@ class RobotomyRequestForm : public AForm {
 
     public:
 
-    RobotomyRequestForm();
-    RobotomyRequestForm(const std::string name, int grade_to_sign, int grade_to_execute, const std::string target);
+    RobotomyRequestForm(const std::string target);
+    RobotomyRequestForm(const RobotomyRequestForm &src);
     ~RobotomyRequestForm();
+    std::string getTarget() const;
+    void execute(Bureaucrat const &employee) const;
+
+
+    private:
+
+    std::string _target;
 };
 
 #endif

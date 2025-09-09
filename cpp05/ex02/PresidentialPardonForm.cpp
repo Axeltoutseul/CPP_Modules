@@ -1,11 +1,11 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("Presidential Pardon Form", 25, 5, "Jim")
+PresidentialPardonForm::PresidentialPardonForm(const std::string target) : AForm("Presidential Pardon Form", 25, 5), _target(target)
 {
     std::cout << "PresidentialPardonForm : Default constructor called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src) : AForm(src)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src) : AForm(src), _target(src._target)
 {
     std::cout << "PresidentialPardonForm : Copy constructor called" << std::endl;
 }
@@ -13,6 +13,11 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src
 PresidentialPardonForm::~PresidentialPardonForm()
 {
     std::cout << "PresidentialPardonForm : Destructor called" << std::endl;
+}
+
+std::string PresidentialPardonForm::getTarget() const
+{
+    return this->_target;
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const

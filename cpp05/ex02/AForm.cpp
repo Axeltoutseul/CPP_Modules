@@ -1,13 +1,13 @@
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-AForm::AForm() : _name("28B"), _grade_to_sign(120), _grade_to_execute(120), _target("Jim")
+AForm::AForm() : _name("28B"), _grade_to_sign(120), _grade_to_execute(120)
 {
     this->_is_signed = false;
     std::cout << "AForm : Default constructor called" << std::endl;
 }
 
-AForm::AForm(const std::string name, int grade_to_sign, int grade_to_execute, const std::string target) : _name(name), _grade_to_sign(grade_to_sign), _grade_to_execute(grade_to_execute), _target(target)
+AForm::AForm(const std::string name, int grade_to_sign, int grade_to_execute) : _name(name), _grade_to_sign(grade_to_sign), _grade_to_execute(grade_to_execute)
 {
     this->_is_signed = false;
     if (this->_grade_to_sign < 1 || this->_grade_to_execute < 1)
@@ -17,7 +17,7 @@ AForm::AForm(const std::string name, int grade_to_sign, int grade_to_execute, co
     std::cout << "AForm : Parameterized constructor called" << std::endl;
 }
 
-AForm::AForm(const AForm &src) : _name(src._name), _grade_to_sign(src._grade_to_sign), _grade_to_execute(src._grade_to_execute), _target(src._target)
+AForm::AForm(const AForm &src) : _name(src._name), _grade_to_sign(src._grade_to_sign), _grade_to_execute(src._grade_to_execute)
 {
     this->_is_signed = src._is_signed;
     if (this->_grade_to_sign < 1 || this->_grade_to_execute < 1)
@@ -42,11 +42,6 @@ AForm &AForm::operator=(const AForm &src)
 std::string AForm::getName() const
 {
     return this->_name;
-}
-
-std::string AForm::getTarget() const
-{
-    return this->_target;
 }
 
 std::string AForm::getDetails()
