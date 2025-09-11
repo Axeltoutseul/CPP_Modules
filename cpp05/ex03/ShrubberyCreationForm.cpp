@@ -1,6 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : AForm("Shrubbery Creation Form", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : AForm("Shrubbery Creation", 145, 137), _target(target)
 {
     std::cout << "ShrubberyCreationForm : Default constructor called" << std::endl;
 }
@@ -34,25 +34,25 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
         return;
     }
 
-    new_file << "          *********         " << std::endl;
-    new_file << "       ***************      " << std::endl;
-    new_file << "      *****************     " << std::endl;
-    new_file << "    *********************   " << std::endl;
-    new_file << "   ***********************  " << std::endl;
-    new_file << "   ***********************  " << std::endl;
-    new_file << "    *********************   " << std::endl;
-    new_file << "      *****************     " << std::endl;
-    new_file << "          ***BBB***         " << std::endl;
-    new_file << "             BBB            " << std::endl;
-    new_file << "             BBB            " << std::endl;
-    new_file << "             BBB            " << std::endl;
-    new_file << "             BBB            " << std::endl;
-    new_file << "             BBB            " << std::endl;
-    new_file << "             BBB            " << std::endl;
-    new_file << "             BBB            " << std::endl;
-    new_file << " ------------BBB------------" << std::endl;
-    new_file << " -----------BBBBB-----------" << std::endl;
-    new_file << " ---------------------------" << std::endl;
-    new_file << " ---------------------------" << std::endl;
+    new_file << "          *********          " << std::endl;
+    new_file << "       ***************       " << std::endl;
+    new_file << "      *****************      " << std::endl;
+    new_file << "    *********************    " << std::endl;
+    new_file << "   ***********************   " << std::endl;
+    new_file << "   ***********************   " << std::endl;
+    new_file << "    *********************    " << std::endl;
+    new_file << "      *****************      " << std::endl;
+    new_file << "          ***BBB***          " << std::endl;
+    new_file << "             BBB             " << std::endl;
+    new_file << "             BBB             " << std::endl;
+    new_file << "             BBB             " << std::endl;
+    new_file << "             BBB             " << std::endl;
+    new_file << "             BBB             " << std::endl;
+    new_file << "             BBB             " << std::endl;
+    new_file << "             BBB             " << std::endl;
+    new_file << " ------------BBB-------------" << std::endl;
+    new_file << " -----------BBBBB------------" << std::endl;
+    new_file << " ----------------------------" << std::endl;
+    new_file << " ----------------------------" << std::endl;
     new_file.close();
 }

@@ -1,8 +1,9 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
-int main(void)
+/*int main(void)
 {
     try
     {
@@ -36,4 +37,13 @@ int main(void)
         std::cerr << e.what() << std::endl;
     }
     return 0;
+}*/
+
+int main(void)
+{
+    {
+        Intern someRandomIntern;
+        AForm* rrf;
+        rrf = someRandomIntern.makeForm("Robotomy Request", "Bender");
+    }
 }

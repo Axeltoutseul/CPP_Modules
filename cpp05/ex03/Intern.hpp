@@ -9,7 +9,7 @@ class Intern {
 
     public:
 
-    std::string makeForm(std::string form_name, std::string target);
+    AForm *makeForm(std::string form_name, std::string target);
 };
 
 #endif

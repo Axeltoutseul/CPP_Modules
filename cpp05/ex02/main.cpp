@@ -7,8 +7,12 @@ int main(void)
     try
     {
         Bureaucrat employee("Jean", 5);
-        RobotomyRequestForm first_form("Garden");
-        RobotomyRequestForm second_form(first_form);
+        //PresidentialPardonForm first_form("Garden");
+        //PresidentialPardonForm second_form(first_form);
+        //RobotomyRequestForm first_form("Garden");
+        //RobotomyRequestForm second_form(first_form);
+        ShrubberyCreationForm first_form("Garden");
+        ShrubberyCreationForm second_form(first_form);
         std::cout << std::endl;
         employee.incrementGrade();
         second_form.beSigned(employee);
