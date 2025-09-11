@@ -9,6 +9,7 @@ class Intern {
 
     public:
 
+    int findIndex(std::string form_name);
     AForm *makeForm(std::string form_name, std::string target);
 };
 

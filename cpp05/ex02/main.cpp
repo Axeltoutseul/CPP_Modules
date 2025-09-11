@@ -7,6 +7,7 @@ int main(void)
     try
     {
         Bureaucrat employee("Jean", 5);
+
         //PresidentialPardonForm first_form("Garden");
         //PresidentialPardonForm second_form(first_form);
         //RobotomyRequestForm first_form("Garden");

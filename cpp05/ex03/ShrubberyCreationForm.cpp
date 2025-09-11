@@ -50,9 +50,9 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     new_file << "             BBB             " << std::endl;
     new_file << "             BBB             " << std::endl;
     new_file << "             BBB             " << std::endl;
-    new_file << " ------------BBB-------------" << std::endl;
-    new_file << " -----------BBBBB------------" << std::endl;
-    new_file << " ----------------------------" << std::endl;
-    new_file << " ----------------------------" << std::endl;
+    new_file << "-------------BBB-------------" << std::endl;
+    new_file << "------------BBBBB------------" << std::endl;
+    new_file << "-----------------------------" << std::endl;
+    new_file << "-----------------------------" << std::endl;
     new_file.close();
 }
