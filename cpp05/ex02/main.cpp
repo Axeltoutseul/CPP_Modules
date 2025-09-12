@@ -16,6 +16,7 @@ int main(void)
         ShrubberyCreationForm second_form(first_form);
         std::cout << std::endl;
         employee.incrementGrade();
+        //employee.decrementGrade();
         second_form.beSigned(employee);
         employee.executeForm(second_form);
         std::cout << std::endl;

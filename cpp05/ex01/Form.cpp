@@ -63,7 +63,7 @@ void Form::beSigned(Bureaucrat &employee)
     }
     else
     {
-        std::cout << employee.getName() << " couldn't sign " << this->_name << " because his grade is too low" << std::endl;
+        std::cout << employee.getName() << " couldn't sign " << this->_name << " because his grade is too low" << std::endl << std::endl;
         throw(Form::GradeTooLowException());
     }
 }

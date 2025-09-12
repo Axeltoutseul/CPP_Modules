@@ -7,6 +7,7 @@ int main(void)
         Bureaucrat employee("Alex", 1);
         Bureaucrat worker(employee);
         std::cout << worker << std::endl;
+        //worker.decrementGrade();
         worker.incrementGrade();
         std::cout << worker << std::endl;
     }

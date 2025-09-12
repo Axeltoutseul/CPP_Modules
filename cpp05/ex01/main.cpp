@@ -6,7 +6,8 @@ int main(void)
     {
         Bureaucrat employee("Francois", 2);
         employee.incrementGrade();
-        Form first_form("2042C", 1, 1);
+        //employee.decrementGrade();
+        Form first_form("2042C", 2, 1);
         Form second_form(first_form);
         std::cout << std::endl << second_form << std::endl << std::endl;
         second_form.beSigned(employee);
