@@ -34,7 +34,8 @@ AForm::~AForm()
 
 AForm &AForm::operator=(const AForm &src)
 {
-    this->_is_signed = src._is_signed;
+    if (this != &src)
+        this->_is_signed = src._is_signed;
     std::cout << "AForm : Copy assignment operator called" << std::endl;
     return *this;
 }

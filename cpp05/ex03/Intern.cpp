@@ -1,5 +1,29 @@
 #include "Intern.hpp"
 
+Intern::Intern()
+{
+    std::cout << "Intern: Default constructor called" << std::endl;
+}
+
+Intern::Intern(const Intern &src)
+{
+    *this = src;
+    std::cout << "Intern: Copy constructor called" << std::endl;
+}
+
+Intern::~Intern()
+{
+    std::cout << "Intern: Destructor called" << std::endl;
+}
+
+Intern &Intern::operator=(const Intern &src)
+{
+    if (this != &src)
+        *this = src;
+    std::cout << "Intern: Copy assignment operator called" << std::endl;
+    return (*this);
+}
+
 int Intern::findIndex(std::string form_name)
 {
     std::string names[] = {"Presidential Pardon", "Robotomy Request", "Shrubbery Creation"};
