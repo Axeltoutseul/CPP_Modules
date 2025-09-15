@@ -7,9 +7,8 @@ int main(void)
 {
     {
         Intern someRandomIntern;
-        Intern anotherIntern(someRandomIntern);
         AForm* rrf;
-        rrf = anotherIntern.makeForm("Robotomy Request", "Bender");
+        rrf = someRandomIntern.makeForm("Robotomy Request", "Bender");
         delete rrf;
     }
     return 0;
