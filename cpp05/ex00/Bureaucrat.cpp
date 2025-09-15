@@ -30,7 +30,8 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src)
 {
-    this->_grade = src._grade;
+    if (this != &src)
+        this->_grade = src._grade;
     std::cout << "Bureaucrat : Copy assignment operator called" << std::endl;
     return *this;
 }

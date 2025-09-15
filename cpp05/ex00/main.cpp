@@ -4,11 +4,12 @@ int main(void)
 {
     try
     {
-        Bureaucrat employee("Alex", 1);
-        Bureaucrat worker(employee);
-        std::cout << worker << std::endl;
+        Bureaucrat employee("Alex", 25);
+        Bureaucrat worker;
+        worker = employee;
+        std::cout << employee << std::endl;
         //worker.decrementGrade();
-        worker.incrementGrade();
+        //worker.incrementGrade();
         std::cout << worker << std::endl;
     }
     catch (Bureaucrat::GradeTooLowException &e)
