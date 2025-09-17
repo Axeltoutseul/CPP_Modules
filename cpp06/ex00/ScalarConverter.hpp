@@ -3,16 +3,18 @@
 #include <iostream>
 #include <stdlib.h>
 
-int is_digit(const char *arg);
-
 class ScalarConverter {
 
     public:
 
     ScalarConverter();
     ~ScalarConverter();
-    char convertToChar(char *content);
-    int convertToInt(char *content);
+    int IsDigit(std::string arg);
+    int IsChar(std::string arg);
+    void ConvertToChar(const std::string content);
+    void ConvertToInt(const std::string content);
+    void ConvertToFloat(const std::string content);
+    void ConvertToDouble(const std::string content);
 
 
     private:
