@@ -9,7 +9,8 @@ NAME = convert
 OBJS_DIR = objects/
 
 SRCS =	main.cpp \
-		ScalarConverter.cpp
+		ScalarConverter.cpp \
+		string_utils.cpp
 
 OBJS = $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 
