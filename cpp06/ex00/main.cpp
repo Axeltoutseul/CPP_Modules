@@ -8,11 +8,6 @@ int main(int argc, char **argv)
         std::cout << "You must have one argument" << std::endl;
         return -1;
     }
-    std::cout << std::endl;
-    content.ConvertToChar(argv[1]);
-    content.ConvertToInt(argv[1]);
-    content.ConvertToFloat(argv[1]);
-    content.ConvertToDouble(argv[1]);
-    std::cout << std::endl;
+    content.DisplayConversion(argv[1]);
     return 0;
 }
