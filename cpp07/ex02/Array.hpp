@@ -1,6 +1,7 @@
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
 #include <iostream>
+#include <bits/stdc++.h>
 
 template<typename T> class Array {
 
@@ -8,14 +9,19 @@ template<typename T> class Array {
 
     Array() : _new_array(new T[0]())
     {
+        //throw(IndexNotFoundException());
     }
 
-    Array(unsigned int n) : _size(n), _new_array(new T[n]())
+    Array(unsigned int n) : _size(n), _new_array(new T[_size]())
     {
+        for (unsigned int i = 0; i < n; i++)
+            _new_array[i] = i + 1;
     }
 
     Array(const Array &other) : _size(other._size), _new_array(new T[_size]())
     {
+        for (size_t i = 0; i < this->_size; i++)
+            this->_new_array[i] = other._new_array[i];
     }
 
     ~Array()
@@ -25,13 +31,15 @@ template<typename T> class Array {
     Array &operator=(const Array &other)
     {
         this->_size = other._size;
-        for (int i = 0; i < other.length; i++)
+        for (size_t i = 0; i < other.length; i++)
             this->_new_array[i] = other._new_array[i];
         return *this;
     }
 
-    T operator [](std::size_t n)
+    T &operator[](const std::size_t n)
     {
+        if (n >= this->_size)
+            throw(IndexNotFoundException());
         return this->_new_array[n];
     }
 
@@ -39,6 +47,14 @@ template<typename T> class Array {
     {
         return this->_size;
     }
+
+    class IndexNotFoundException : public std::exception {
+
+        public:
+        const char *what() const throw() {
+            return "Index out of range";
+        }
+    };
 
 
     private:

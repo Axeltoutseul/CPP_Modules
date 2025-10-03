@@ -2,9 +2,14 @@
 
 int main()
 {
-    Array<int> new_array(10);
-    Array<int> new_array2(new_array);
-    for (std::size_t i = 0; i < new_array2.GetSize(); i++)
-        std::cout << new_array2[i] << std::endl;
+    try
+    {    
+        Array<int> new_array(8);
+        std::cout << new_array[8] << std::endl;
+    }
+    catch(const Array<int>::IndexNotFoundException& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
     return 0;
 }
