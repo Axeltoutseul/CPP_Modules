@@ -9,13 +9,10 @@ template<typename T> class Array {
 
     Array() : _new_array(new T[0]())
     {
-        //throw(IndexNotFoundException());
     }
 
     Array(unsigned int n) : _size(n), _new_array(new T[_size]())
     {
-        for (unsigned int i = 0; i < n; i++)
-            _new_array[i] = i + 1;
     }
 
     Array(const Array &other) : _size(other._size), _new_array(new T[_size]())
@@ -38,7 +35,7 @@ template<typename T> class Array {
 
     T &operator[](const std::size_t n)
     {
-        if (n >= this->_size)
+        if (n < 0 || n >= this->_size)
             throw(IndexNotFoundException());
         return this->_new_array[n];
     }
