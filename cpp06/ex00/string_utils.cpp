@@ -1,17 +1,5 @@
 #include "ScalarConverter.hpp"
 
-std::string ft_strncpy(std::string dest, const std::string src, unsigned int n)
-{
-    unsigned int i = 0;
-    while (src[i] && i < n)
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    dest[i] = 0;
-    return dest;
-}
-
 long my_stol(const std::string str)
 {
     const char *my_char = str.c_str();
@@ -67,6 +55,5 @@ std::string shortened_string(std::string str)
     int length = str.size();
     if (length > 1 && str[length - 1] == 'f')
         str.resize(str.size() - 1);
-        //new_string = ft_strncpy(new_string, str, length - 1);
     return str;
 }

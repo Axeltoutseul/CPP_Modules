@@ -9,8 +9,6 @@ struct Data
     std::string str;
 };
 
-struct Data NewData(struct Data src);
-
 class Serializer
 {
     public:

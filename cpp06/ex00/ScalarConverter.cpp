@@ -64,7 +64,7 @@ int ScalarConverter::IsFloat(const std::string arg)
             return 0;
         i++;
     }
-    if (arg[i] == 'f' && arg[i - 1] != '.')
+    if (arg[i] == 'f' && (arg[i - 2] == '.' || (arg.size() > 3 && arg[i - 3] == '.')))
         return 1;
     return 0;
 }
@@ -84,7 +84,7 @@ int ScalarConverter::IsDouble(const std::string arg)
             return 0;
         i++;
     }
-    if (arg[i - 1] == '.')
+    if (arg[i - 2] != '.' && (arg.size() > 2 && arg[i - 3] != '.'))
         return 0;
     return 1;
 }
@@ -188,5 +188,5 @@ void ScalarConverter::DisplayConversion(const std::string arg)
     else if (IsDouble(arg))
         this->ConvertDouble(arg);
     else
-        std::cout << "Error ! " << arg << " has no type !" << std::endl;
+        std::cout << "Error ! " << arg << " does not match any type !" << std::endl;
 }

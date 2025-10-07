@@ -4,7 +4,6 @@
 #include <stdlib.h>
 
 int count_occurrences(const std::string arg, const char c);
-std::string ft_strncpy(std::string dest, const std::string src, unsigned int n);
 int is_digit(const std::string arg);
 int is_special_value(std::string str);
 int is_special_value_with_f(std::string str);

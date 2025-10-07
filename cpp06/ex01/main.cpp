@@ -10,8 +10,11 @@ int main(void)
 {
     Serializer new_serializer;
     Data ptr;
+    ptr.nb = 1;
+    ptr.str = "WUT";
     uintptr_t nb = new_serializer.serialize(&ptr);
     std::cout << std::endl;
+    std::cout << &ptr << std::endl;
     std::cout << nb << std::endl;
     std::cout << new_serializer.deserialize(nb) << std::endl;
     std::cout << std::endl;

@@ -1,13 +1,5 @@
 #include "Serializer.hpp"
 
-struct Data NewData(struct Data src)
-{
-    struct Data dest;
-    dest.nb = src.nb;
-    dest.str = src.str;
-    return dest;
-};
-
 Serializer::Serializer()
 {
     std::cout << "Serializer : Default constructor called" << std::endl;
