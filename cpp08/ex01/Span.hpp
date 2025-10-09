@@ -1,6 +1,7 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 #include <iostream>
+#include <bits/stdc++.h>
 
 class Span {
 
@@ -11,12 +12,14 @@ class Span {
     Span(const Span &other);
     ~Span();
     Span &operator=(const Span &other);
-    int GetSize();
-    void DisplayValues();
+    int getSize();
+    void displayValues();
     void addNumber(int nb);
     int Min();
     int Max();
-    void SortIntTab();
+    int shortestSpan();
+    int longestSpan();
+    void sortIntTab();
 
     class AlreadyFullException {
         public:
