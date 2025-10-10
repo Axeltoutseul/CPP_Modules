@@ -4,8 +4,13 @@ int main(void)
 {
     try
     {
-        int tab[] = {2, 4, 6, 8, 10};
-        std::cout << find_occurrence<int>(tab, 3) << std::endl;
+        std::deque<int> deque;
+        deque.push_back(1);
+        deque.push_back(2);
+        deque.push_back(3);
+        deque.push_back(4);
+        std::deque<int>::iterator it_deque = find_occurrence(deque, 4);
+        std::cout <<  *it_deque << std::endl;
     }
     catch(const NotFoundException &e)
     {

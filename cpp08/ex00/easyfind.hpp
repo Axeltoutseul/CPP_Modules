@@ -1,6 +1,11 @@
 #ifndef EASYFIND_HPP
 #define EASYFIND_HPP
 #include <iostream>
+#include <vector>
+#include <deque>
+#include <list>
+#include <stack>
+#include <algorithm>
 
 class NotFoundException : public std::exception {
 
@@ -11,14 +16,12 @@ class NotFoundException : public std::exception {
 };
 
 template<typename T>
-T find_occurrence(T *array, int nb)
+typename T::iterator find_occurrence(T &array, int nb)
 {
-    int i = 0;
-    while (array[i] && array[i] != nb)
-        i++;
-    if (!array[i])
+    typename T::iterator it = find(array.begin(), array.end(), nb);
+    if (it == array.end())
         throw NotFoundException();
-    return array[i];
+    return it;
 }
 
 #endif
