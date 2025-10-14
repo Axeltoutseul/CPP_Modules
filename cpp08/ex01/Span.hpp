@@ -21,14 +21,14 @@ class Span {
     int longestSpan();
     void sortIntTab();
 
-    class AlreadyFullException {
+    class AlreadyFullException : public std::exception {
         public:
         const char *what() const throw() {
             return "The array can't store one more number";
         }
     };
 
-    class NoSpanException {
+    class NoSpanException : public std::exception {
         public:
         const char *what() const throw() {
             return "You must have at least two numbers to find a span";
