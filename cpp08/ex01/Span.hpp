@@ -12,14 +12,11 @@ class Span {
     Span(const Span &other);
     ~Span();
     Span &operator=(const Span &other);
-    int getSize();
-    void displayValues();
+    unsigned int getSize();
+    unsigned int getMaxSize();
     void addNumber(int nb);
-    int Min();
-    int Max();
     int shortestSpan();
     int longestSpan();
-    void sortIntTab();
 
     class AlreadyFullException : public std::exception {
         public:
@@ -37,9 +34,8 @@ class Span {
 
     private:
 
-    int _current_size;
-    int _size_max;
-    int *_array;
+    std::vector<int> _array;
+    unsigned int _size_max;
 };
 
 #endif

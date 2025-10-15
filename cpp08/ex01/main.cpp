@@ -27,7 +27,6 @@ int main()
         mirror.addNumber(80);
         mirror.addNumber(14);
         mirror.addNumber(51);
-        mirror.displayValues();
         std::cout << mirror.shortestSpan() << std::endl;
         std::cout << mirror.longestSpan() << std::endl;
     }

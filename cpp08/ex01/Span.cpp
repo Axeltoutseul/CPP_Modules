@@ -1,129 +1,78 @@
 #include "Span.hpp"
 
-Span::Span() : _size_max(0), _array(new int[_size_max])
+Span::Span() : _array(0), _size_max(0)
 {
-    this->_current_size = 0;
 }
 
-Span::Span(unsigned int N) : _size_max(N), _array(new int[_size_max])
+Span::Span(unsigned int N) : _array(0), _size_max(N)
 {
-    this->_current_size = 0;
 }
 
-Span::Span(const Span &other) : _size_max(other._size_max), _array(new int[_size_max])
+Span::Span(const Span &other) : _array(0), _size_max(other._size_max)
 {
-    for (int i = 0; i < other._size_max; i++)
-        this->_array[i] = other._array[i];
-    this->_current_size = other._current_size;
+    this->_array = other._array; 
     this->_size_max = other._size_max;
 }
 
 Span::~Span()
 {
-    delete[] this->_array;
 }
 
 Span &Span::operator=(const Span &other)
 {
-    this->_current_size = other._current_size;
-    this->_size_max = other._size_max;
-    this->_array = new int[_size_max]; 
-    for (int i = 0; i < other._size_max; i++)
-        this->_array[i] = other._array[i];
+    if (this != &other)
+    {
+        this->_size_max = other._size_max;
+        this->_array = other._array; 
+    }
     return *this;
 }
 
-int Span::getSize()
+unsigned int Span::getSize()
 {
-    return this->_current_size;
+    return this->_array.size();
 }
 
-void Span::displayValues()
+unsigned int Span::getMaxSize()
 {
-    for (int i = 0; i < this->_current_size; i++)
-    {
-        std::cout << this->_array[i];
-        if (i < this->_current_size - 1)
-            std::cout << " ";
-    }
-    if (this->_current_size > 0)
-        std::cout << std::endl;
+    return this->_size_max;
 }
 
 void Span::addNumber(int nb)
 {
-    if (this->_current_size == this->_size_max)
-        throw(AlreadyFullException());
-    this->_array[_current_size] = nb;
-    this->_current_size++;
-}
-
-int Span::Min()
-{
-    if (this->_current_size < 2)
-        throw NoSpanException();
-    int nb = this->_array[0];
-    int i = 0;
-    while (i < this->_current_size)
-    {
-        if (nb > this->_array[i])
-            nb = this->_array[i];
-        i++;
-    }
-    return nb;
-}
-
-int Span::Max()
-{
-    if (this->_current_size < 2)
-        throw NoSpanException();
-    int nb = this->_array[0];
-    int i = 0;
-    while (i < this->_current_size)
-    {
-        if (nb < this->_array[i])
-            nb = this->_array[i];
-        i++;
-    }
-    return nb;
+    if (this->_array.size() == this->_size_max)
+        throw AlreadyFullException();
+    std::vector<int>::iterator it = this->_array.end();
+    this->_array.insert(it, nb);
 }
 
 int Span::shortestSpan()
 {
-    if (this->_current_size < 2)
+    if (this->_array.size() < 2)
         throw NoSpanException();
-    this->sortIntTab();
-    int span = this->_array[1] - this->_array[0];
-    if (this->_current_size == 2)
-        return span;
-    for (int i = 0; i < this->_current_size - 1; i++)
+    std::sort(this->_array.begin(), this->_array.end());
+    std::vector<int>::iterator a = this->_array.begin();
+    std::vector<int>::iterator b = a;
+    b++;
+    int span = *b - *a;
+    while (b < this->_array.end())
     {
-        if (span > (this->_array[i + 1] - this->_array[i]))
-            span = this->_array[i + 1] - this->_array[i];
+        if (span > *b - *a)
+            span = *b - *a;
+        a++;
+        b++;
     }
     return span;
 }
 
 int Span::longestSpan()
 {
-    int span = this->Max() - this->Min();
+    if (this->_array.size() < 2)
+        throw NoSpanException();
+    std::sort(this->_array.begin(), this->_array.end());
+    std::vector<int>::iterator min = this->_array.begin();
+    std::vector<int>::iterator max = this->_array.end();
+    max--;
+    int span = *max - *min;
     return span;
-}
-
-void Span::sortIntTab()
-{
-    int i = 0;
-    int temp;
-    while (i < this->_current_size - 1)
-    {
-        if (this->_array[i] > this->_array[i + 1])
-        {
-            temp = this->_array[i];
-            this->_array[i] = this->_array[i + 1];
-            this->_array[i + 1] = temp;
-            i = 0;
-        }
-        else
-            i++;
-    }
 }
