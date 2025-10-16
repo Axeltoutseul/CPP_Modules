@@ -1,10 +1,10 @@
 #include "Span.hpp"
 
-Span::Span() : _array(0), _size_max(0)
+Span::Span() : _array(), _size_max(0)
 {
 }
 
-Span::Span(unsigned int N) : _array(0), _size_max(N)
+Span::Span(unsigned int N) : _array(), _size_max(N)
 {
 }
 
